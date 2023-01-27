@@ -7,25 +7,28 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
-    <h1>Order Delivery Details</h1>
-        Name:
-        <input type="text" name="name" placeholder="Placeholder">
-        <br>
-        Address:
-        <input type="text" name="address" placeholder="Placeholder">
-        <br>
-        Phone:
-        <input type="text" name="phone" placeholder="Placeholder">
-        <br>
-        Rush:
-        <input type="checkbox" name="rush" placeholder="Placeholder">
-        <br>
-        Comments:
-        <input type="text" name="comments" placeholder="Type here">
-        <br>
-        <button type="reset">Cancel Order</button>
-        <button type="submit">Place Order</button>
+    <form data-th-action="@{/pizza/order}"
+        method="post">
+        <h1>Order Delivery Details</h1>
+        <div data-th-object="${delivery}">
+            Name:
+            <input type="text" name="name" placeholder="Placeholder" data-th-field="*{name}">
+            <br>
+            Address:
+            <input type="text" name="address" placeholder="Placeholder" data-th-field="*{address}">
+            <br>
+            Phone:
+            <input type="text" name="phone" placeholder="Placeholder" data-th-field="*{phone}">
+            <br>
+            Rush:
+            <input type="checkbox" name="rush" placeholder="Placeholder" data-th-field="*{rush}">
+            <br>
+            Comments:
+            <input type="text" name="comments" placeholder="Type here" data-th-field="*{comments}">
+            <br>
+            <button type="reset">Cancel Order</button>
+            <button type="submit">Place Order</button>
+        </div>
     </form>
 </body>
 </html>

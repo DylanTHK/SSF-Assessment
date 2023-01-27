@@ -66,13 +66,15 @@ public class RedisConfig {
 
         // set serializer for redis key and hashkey
         redisTemplate.setKeySerializer(new StringRedisSerializer());
-        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
 
+        
         // set serializer for value and hashvalue
-        RedisSerializer<Object> objSerializer = 
-                new JdkSerializationRedisSerializer(getClass().getClassLoader()); // why can getClass() method be called like this
-        redisTemplate.setValueSerializer(objSerializer);
-        redisTemplate.setHashValueSerializer(objSerializer);
+        // RedisSerializer<Object> objSerializer = 
+        //         new JdkSerializationRedisSerializer(getClass().getClassLoader()); // why can getClass() method be called like this
+        // redisTemplate.setValueSerializer(objSerializer);
+        // redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        // redisTemplate.setHashValueSerializer(objSerializer);
 
         return redisTemplate;
     }
