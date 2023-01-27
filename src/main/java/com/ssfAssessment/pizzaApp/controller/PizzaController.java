@@ -69,7 +69,7 @@ public class PizzaController {
         System.out.println("VIEW2 OrderSummary: " + orderSummary); // TODO REMOVE
 
         // call method to save summary in redis
-        
+        pizzaSvc.saveOrder(orderSummary);
 
         // sending orderSummary to orderConfirmation.html
         model.addAttribute("summary", orderSummary);
