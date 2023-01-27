@@ -1,7 +1,5 @@
 package com.ssfAssessment.pizzaApp.service;
 
-import java.util.Random;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -9,8 +7,6 @@ import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssfAssessment.pizzaApp.model.OrderSummary;
-
-import jakarta.json.Json;
 
 @Service
 public class PizzaService {

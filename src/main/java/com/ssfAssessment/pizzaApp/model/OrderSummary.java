@@ -2,10 +2,6 @@ package com.ssfAssessment.pizzaApp.model;
 
 import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.ssfAssessment.pizzaApp.service.PizzaService;
-
 // consolidate details from DeliveryDetails and Pizza Order
 public class OrderSummary {
     

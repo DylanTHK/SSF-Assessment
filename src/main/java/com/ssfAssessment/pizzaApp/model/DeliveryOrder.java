@@ -2,9 +2,6 @@ package com.ssfAssessment.pizzaApp.model;
 
 import java.io.Serializable;
 
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-
 // class to validate user input
 public class DeliveryOrder implements Serializable{
     private static final long serialVersionUID = 1L;
