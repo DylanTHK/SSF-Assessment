@@ -11,21 +11,41 @@
         method="post">
         <h1>Order Delivery Details</h1>
         <div data-th-object="${delivery}">
-            Name:
-            <input type="text" name="name" placeholder="Placeholder" data-th-field="*{name}">
-            <br>
-            Address:
-            <input type="text" name="address" placeholder="Placeholder" data-th-field="*{address}">
-            <br>
-            Phone:
-            <input type="text" name="phone" placeholder="Placeholder" data-th-field="*{phone}">
-            <br>
-            Rush:
-            <input type="checkbox" name="rush" placeholder="Placeholder" data-th-field="*{rush}">
-            <br>
-            Comments:
-            <input type="text" name="comments" placeholder="Type here" data-th-field="*{comments}">
-            <br>
+            <p>
+                Name:
+                <input type="text" name="name" placeholder="Placeholder" data-th-field="*{name}">
+                <span
+                    class="error"
+                    data-th-if="${#fields.hasErrors('name')}"
+                    data-th-errors="*{name}"
+                ></span>
+            </p>
+            <p>
+                Address:
+                <input type="text" name="address" placeholder="Placeholder" data-th-field="*{address}">
+                <span
+                    class="error"
+                    data-th-if="${#fields.hasErrors('address')}"
+                    data-th-errors="*{address}"
+                ></span>
+            </p>
+            <p>
+                Phone:
+                <input type="text" name="phone" placeholder="Placeholder" data-th-field="*{phone}">
+                <span
+                    class="error"
+                    data-th-if="${#fields.hasErrors('phone')}"
+                    data-th-errors="*{phone}"
+                ></span>
+            </p>
+            <p>
+                Rush:
+                <input type="checkbox" name="rush" placeholder="Placeholder" data-th-field="*{rush}">
+            </p>
+            <p>
+                Comments:
+                <input type="text" name="comments" placeholder="Type here" data-th-field="*{comments}">
+            </p>
             <button type="reset">Cancel Order</button>
             <button type="submit">Place Order</button>
         </div>

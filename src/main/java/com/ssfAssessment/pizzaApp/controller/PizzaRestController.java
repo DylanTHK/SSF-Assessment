@@ -25,7 +25,17 @@ public class PizzaRestController {
 
         // use id to get value from redis
         String jsonOrder = template.opsForValue().get(id).toString();
+        System.out.println("Response: " + jsonOrder);
 
+        // condition to send if response not found
+        if (jsonOrder == null) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .contentType(MediaType.APPLICATION_JSON)
+                    .body("");
+        }
+
+        // return response entity with json body
         return ResponseEntity
             .status(HttpStatus.OK)
             .contentType(MediaType.APPLICATION_JSON)

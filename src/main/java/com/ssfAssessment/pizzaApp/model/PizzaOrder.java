@@ -16,10 +16,10 @@ public class PizzaOrder implements Serializable{
     @NotBlank(message="Order must have pizza size")
     private String size;
 
-    @NotNull(message = "Min quantity: 1")
-    @Min(value = 1, message = "Min quantity: 1")
+    // @NotNull(message = "Min quantity: 1")
+    // @Min(value = 1, message = "Min quantity: 1")
     // @Max(value = 10, message = "Max quantit: 10")
-    // @Min(1)
+    @Min(1)
     @Max(10)
     private Integer quantity;
 
