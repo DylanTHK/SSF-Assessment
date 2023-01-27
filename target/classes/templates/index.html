@@ -13,8 +13,9 @@
 			<h2>Panucci's Pizza</h2>
 		</div>
 
-		<form action="/pizza"
-		method="post">
+		<form data-th-action="@{/pizza}"
+			method="post"
+			data-th-object="${pizza}">
 			<div>
 				<h2>Select a pizza</h2>
 				<table>
@@ -25,7 +26,7 @@
 								<img src="/images/Bella.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="bella"> Bella
+								<input type="radio" name="pizza" value="bella" data-th-field="*{type}"> Bella
 							</div>
 						</td>
 						<td>
@@ -33,7 +34,7 @@
 								<img src="/images/Margherita.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="margherita"> Margherita
+								<input type="radio" name="pizza" value="margherita" data-th-field="*{type}"> Margherita
 							</div>
 						</td>
 						<td>
@@ -41,7 +42,7 @@
 								<img src="/images/Marinara.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="marinara"> Marinara
+								<input type="radio" name="pizza" value="marinara" data-th-field="*{type}"> Marinara
 							</div>
 						</td>
 						<td>
@@ -49,7 +50,7 @@
 								<img src="/images/SpianataCalabrese.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="spianatacalabrese"> Spianata Calabrese
+								<input type="radio" name="pizza" value="spianatacalabrese" data-th-field="*{type}"> Spianata Calabrese
 							</div>
 						</td>
 						<td>
@@ -57,26 +58,41 @@
 								<img src="/images/TrioFormaggio.png" class="pizza">
 							</div>
 							<div>
-								<input type="radio" name="pizza" value="trioformaggio"> Trio Formaggio
+								<input type="radio" name="pizza" value="trioformaggio" data-th-field="*{type}"> Trio Formaggio
 							</div>
 						</td>
+						<!-- <span
+						class="error"
+						data-th-if="${#fields.hasErrors('type')}"
+						data-th-errors="*{type}"
+						></span> -->
 					</tr>
 					<!-- row for size (option list) -->
 					<tr>
 						<td>Size:</td>
 						<td>
 							<select name="size" >
-								<option value="sm">Small</option>
-								<option value="md">Medium</option>
-								<option value="lg">Large</option>
+								<option value="sm" data-th-field="*{size}">Small</option>
+								<option value="md" data-th-field="*{size}">Medium</option>
+								<option value="lg" data-th-field="*{size}">Large</option>
 							</select>
 						</td>
+						<!-- <span
+						class="error"
+						data-th-if="${#fields.hasErrors('size')}"
+						data-th-errors="*{size}"
+						></span> -->
 					</tr>
 					<!-- row for quantity number input -->
 					<tr>
 						<td>Quantity:</td>
 						<td>
-							<input type="number" min="1" name="quantity"> 
+							<input type="number" min="1" name="quantity" data-th-field="*{quantity}" required="true"> 
+							<span
+								class="error"
+								data-th-if="${#fields.hasErrors('quantity')}"
+								data-th-errors="*{quantity}"
+							></span>
 						</td>
 					</tr>
 					<tr>
