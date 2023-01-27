@@ -1,13 +1,13 @@
-package com.SSFAssessment.pizzaApplication;
+package com.ssfAssessment.pizzaApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PizzaApplication {
+public class PizzaAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PizzaApplication.class, args);
+		SpringApplication.run(PizzaAppApplication.class, args);
 	}
 
 }
