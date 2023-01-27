@@ -9,32 +9,24 @@ import jakarta.validation.constraints.Size;
 public class DeliveryOrder implements Serializable{
     private static final long serialVersionUID = 1L;
 
-    // fields validated in PizzaOrder
-    private String pizza;
-    private String size;
-    private Integer quantity;
-
-    @NotNull(message="Name can not be null")
-    @Size(min=3, message="Name should be between more than 3 chars")
+    // @NotNull(message="Name can not be null")
+    // @Size(min=3, message="Name should be between more than 3 chars")
     private String name;
     
-    @NotNull(message="Address is mandatory")
+    // @NotNull(message="Address is mandatory")
     private String address;
 
-    @Size(min=8, message="Phone number must be at least 8 digits")
+    // @Size(min=8, message="Phone number must be at least 8 digits")
     private String phone;
 
     // optional fields
-    private Boolean rush = false;
+    private Boolean rush;
     private String comments;
 
     // default constructor
-    public DeliveryOrder(PizzaOrder order) {
-        this.pizza = order.getType();
-        this.size = order.getSize();
-        this.quantity = order.getQuantity();
-    }
+    public DeliveryOrder() {
 
+    }
 
     public String getName() {
         return name;
@@ -85,42 +77,11 @@ public class DeliveryOrder implements Serializable{
         this.comments = comments;
     }
 
-
-    public String getPizza() {
-        return pizza;
-    }
-
-
-    public void setPizza(String type) {
-        this.pizza = type;
-    }
-
-
-    public String getSize() {
-        return size;
-    }
-
-
-    public void setSize(String size) {
-        this.size = size;
-    }
-
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-
     @Override
     public String toString() {
-        return "DeliveryOrder [pizza=" + pizza + ", size=" + size + ", quantity=" + quantity + ", name=" + name
-                + ", address=" + address + ", phone=" + phone + ", rush=" + rush + ", comments=" + comments + "]";
+        return "DeliveryOrder [name=" + name + ", address=" + address + ", phone=" + phone + ", rush=" + rush
+                + ", comments=" + comments + "]";
     }
-    
+
 
 }

@@ -8,21 +8,22 @@
 </head>
 <body>
     <h1>Order Confirmation</h1>
-    <div>
+    <!-- add thymeleaf object here -->
+    <div data-th-object="${summary}">
         Order Number: 
-        <span></span>
+        <span data-th-text="*{orderId}"></span>
         <br>
         Your Order will be delivered to 
-        <span></span>
+        <span data-th-text="*{address}"></span>
         <br>
-        Pizza cost: 
-        <span></span>
+        Pizza cost: $
+        <span data-th-text="*{pizzaCost}"></span>
         <br>
         Rush:
-        <span></span>
+        <span data-th-text="*{rush}"></span>
         <br>
-        Total cost: 
-        <span></span>
+        Total cost: $
+        <span data-th-text="*{total}"></span>
     </div>
 
     
